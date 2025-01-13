@@ -18,7 +18,7 @@ def get_estimated_price(locations,sqft,bhk,bath):
     x[2]=bhk
     if loc_index >= 0:
          x[loc_index]=1
-    return __model.predict([x])
+    return  round(__model.predict([x])[0],2)
 
 def get_location_names():
      return __locations
@@ -31,7 +31,7 @@ def load_saved_artifacts():
      with open("./artifacts/columns.json", 'r') as f:
          __data_columns = json.load(f) ['data_columns']
          __locations = __data_columns[3:]
-
+     global __model
      with open("./artifacts/banglore_home_prices_model.pickle", 'rb') as f:
           __model = pickle.load(f)
     
