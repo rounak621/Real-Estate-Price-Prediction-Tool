@@ -42,15 +42,9 @@ def convert_sqft_to_num(x):
         return float(x)
     except:
         return None
-def convert_sqft_to_num(x):
-    tokens=x.split("-")
-    if len(tokens)==2:
-        return(float(tokens[0])+float(tokens[1]))/2
-    try:
-        return float(x)
-    except:
-        return None
-df4.loc[30]
+df4=df3.copy()
+df4["total_sqft"]=df4["total_sqft"].apply(convert_sqft_to_num)
+df4.head()df4.loc[30]
 df5=df4.copy()
 df5["price_per_sqft"] = df5["price"]*100000/df5["total_sqft"]
 df5.head()
