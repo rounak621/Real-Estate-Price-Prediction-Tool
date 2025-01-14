@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 import matplotlib
 matplotlib.rcParams["figure.figsize"] = (20,10)
 
-df1=pd.read_csv(r"C:\Users\nakul\Downloads\Realestate\Bengaluru_House_Data.csv")
+df1=pd.read_csv(r"https://raw.githubusercontent.com/rounak621/Real-Estate-Price-Prediction-Tool/refs/heads/main/Bengaluru_House_Data.csv")
 df1.head()
 
 df1.shape
